@@ -1,0 +1,117 @@
+<div class="left-backdrop"></div>
+<div class="right-backdrop hide-sm bg-white right-backdrop--with-bg"></div>
+<div class="list-your-space__content">
+	<div class="centered-content clearfix">
+		<div class="main-panel-container no-padding-h bg-white main-panel-outer-half clearfix" tabindex="-1">
+			<div class="main-panel main-panel-padding main-panel-progress pull-right main-panel-inner-half space-sm-8">
+				<div class="panel--no-border panel-title">
+					<h3 class="no-margin-padding">How many guests can your place accommodate?</h3>
+				</div>
+				<div class="space-6">
+					<div class="select select-block select-jumbo">
+						<select name="bedrooms" class="" ng-model="totalbeds">
+							<option selected="" value="0">Studio</option>
+							<option value="1">1 bedroom</option>
+							<option value="2">2 bedrooms</option>
+							<option value="3">3 bedrooms</option>
+							<option value="4">4 bedrooms</option>
+							<option value="5">5 bedrooms</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="">
+					<label class="text-gray">
+						<span>How many guests can stay?</span>
+					</label>
+					<div class="increment-btn no-padding">
+						<div class="increment-btn btn-group no-padding no-border-bottom-radius">
+							<fieldset class="lys-input__fieldset">
+								<!-- <textarea class="lys-summary__textarea1 hide-scroll col-md-9" placeholder=""></textarea> -->
+								<input class="text-gray btn increment-btn__label increment-jumbo" min="1" type="number" ng-model="noofguests">
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="">
+					<label  class="text-gray">
+						<span>How many beds can guests use?</span>
+					</label>
+					<div class="increment-btn no-padding">
+						<div class="increment-btn btn-group no-padding no-border-bottom-radius">
+							<fieldset class="lys-input__fieldset">
+								<!-- <textarea class="lys-summary__textarea1 hide-scroll col-md-9" placeholder=""></textarea> -->
+								<input class="text-gray btn increment-btn__label increment-jumbo" min="1" type="number" ng-model="bedsforuse">
+							</fieldset>
+						</div>
+					</div>
+
+				</div>
+				<div class="">
+					<label class="text-gray">
+						<span>How many bathrooms can guests use?</span>
+					</label>
+					<div class="increment-btn no-padding">
+						<div class="increment-btn btn-group no-padding no-border-bottom-radius">
+							<fieldset class="lys-input__fieldset">
+								<!-- <input class="lys-summary__textarea1 hide-scroll col-md-9" type="number"></textarea> -->
+								<input class="text-gray btn increment-btn__label increment-jumbo" min="1" type="number" ng-model="bathsforuse">
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-panel__actions-wrapper">
+				<div class="centered-content clearfix">
+					<div class="bg-white main-panel-outer-half clearfix shadowed">
+						<div class="no-margin-padding__sm main-panel-padding main-panel-progress pull-right main-panel-inner-half space-sm-8">
+							<div class="divider hide-sm"></div>
+							<div class="row no-margin-padding__sm">
+								<div class="main-panel__actions col-sm-12 no-margin-padding__sm">
+									<div>
+										<a class="btn-progress-back link-icon va-container va-container-v pull-left text-gray link--accessibility-outline" ng-click="startHosting1()">
+											<span class="icon hide-sm"></span>
+											<span class="va-middle">
+												<h5 class="text-normal">
+													<span>Back</span>
+												</h5>
+											</span>
+										</a>
+										<a class="btn btn-large btn-progress-next btn-large__next-btn pull-right-md btn-primary" ng-click="becomeHostLocation()" id="step2-BecomeHostBeds">
+											<div class="btn-progress-next__text">
+												<span>Next</span>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="waypoint-container">
+				<span style="font-size:0;"></span>
+			</div>
+		</div>
+		<div class="help-panel-container">
+			<div class="hide-sm help-panel panel">
+				<div class="panel-body">
+					<div class="help-panel__bulb-img space-2"></div>
+					<div class="help-panel__text">
+						<p>
+							<span>The number and type of beds you have determines how many guests can stay comfortably.</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="show-sm help-panel__floating-container">
+				<span class="tooltip-popup__transition-container">
+					<div class="help-panel--collapsed help-panel__bulb-img-bubble">
+						<div class="help-panel__bulb-img img-center"></div>
+					</div>
+				</span>
+			</div>
+		</div>
+	</div>
+	<script src="/scripts/util.client.logging.js"></script>
+</div>

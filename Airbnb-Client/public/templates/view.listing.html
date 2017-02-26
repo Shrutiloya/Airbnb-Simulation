@@ -1,0 +1,267 @@
+
+<link rel='stylesheet' href='/stylesheets/style.homepage.css' />
+<link href="https://a2.muscache.com/airbnb/static/packages/common_o2.1-95d643eef69139392786405865038db8.css" media="all" rel="stylesheet" type="text/css" />
+<link href="https://a1.muscache.com/airbnb/static/packages/common-e2aa11d9210d88c08eb62a0e67b5f554.css" media="all" rel="stylesheet" type="text/css" />
+<link href="https://a1.muscache.com/airbnb/static/packages/address_widget-4f18ee66a37930ce1c93c8f33690c7b0.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="https://a2.muscache.com/airbnb/static/packages/phonenumbers-67b13441cd68e5c9161e38a0dab88b54.css" media="screen" rel="stylesheet" type="text/css" /><link href="https://a2.muscache.com/airbnb/static/business_travel/quick_enroll-9fe44fac8aa94516d93764b9b4e57633.css" media="screen" rel="stylesheet" type="text/css" /><link href="https://a1.muscache.com/airbnb/static/packages/edit_profile-ac1fc053a07a8229d28854f4afdc24e6.css" media="screen" rel="stylesheet" type="text/css" />
+<link rel='stylesheet' href='/stylesheets/style.homepage.css' />
+
+<!-- <p>listing</p> -->
+
+
+
+<div class = "row" ng-repeat = "data in properties" >
+      <br>
+      <div class="row row-condensed">
+            <!-- <img src= {{data.images[0]}} style="max-height: 250px; max-width: 250px;"></img> -->
+            <div ng-repeat = "i in data.images">
+                  <img src={{i}} style="height:200px; float:left"></img>
+            </div>
+      </div>
+      <br>
+      <div class = "col-md-6">
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="description">
+                        Description
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-description'}}" name="description" size="30" type="text" value={{data.description}} ng-model="data.description" />
+                        </div>
+            </div>
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="title">
+                        Title
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-title'}}" name="title" size="30" type="text" value={{data.title}} ng-model="data.title" />
+                        </div>
+            </div>
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="street">
+                        Guest Access
+                        </label>
+                        <div class="col-sm-8">
+                        <!-- <input id="guestaccess" name="guestaccess" size="30" type="text" value={{data.guestaccess}} ng-model="data.guestaccess" /> -->
+                        <div class="select select-block">
+                              <select id="{{data.id + '-room-type'}}" name="room_type" class="" ng-model="data.guestaccess">
+                                    <option value="entire_home">Entire place</option>
+                                    <option selected="" value="private_room">Private room</option>
+                                    <option value="shared_room">Shared room</option>
+                              </select>
+                        </div>
+                        </div>
+             </div>
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="roomsinproperety">
+                        Number of Rooms
+                        </label>
+                        <div class="col-sm-8">
+                        <!-- <input id="street" name="roomsinproperety" size="30" type="text" value={{data.roomsinproperety}} ng-model="data.roomsinproperety" /> -->
+                        <input id="{{data.id + '-rooms'}}" class="text-gray btn increment-jumbo" min="1" type="number" value={{data.roomsinproperety}} ng-model="data.roomsinproperety">
+                        </div>
+            </div>
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="totbedsavailable">
+                        Beds available
+                        </label>
+                        <div class="col-sm-8">
+                        <!-- <input id="totbedsavailable" name="totbedsavailable" size="30" type="text" value={{data.totbedsavailable}} ng-model="data.totbedsavailable" /> -->
+                        <input id="{{data.id + '-beds'}}" class="text-gray btn increment-jumbo" min="1" type="number" value={{data.totbedsavailable}} ng-model="data.totbedsavailable">
+                        </div>
+            </div>
+
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="noofguests">
+                        Guests
+                        </label>
+                        <div class="col-sm-8">
+                        <!-- <input id="noofguests" name="noofguests" size="30" type="text" value={{data.noofguests}} ng-model="data.noofguests" /> -->
+                        <input id="{{data.id + '-guests'}}" class="text-gray btn increment-jumbo" min="1" type="number" value={{data.noofguests}} ng-model="data.noofguests">
+                        </div>
+            </div>
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="bedsforuse">
+                        Beds for use
+                        </label>
+                        <div class="col-sm-8">
+                        <!-- <input id="bedsforuse" name="bedsforuse" size="30" type="text" value={{data.bedsforuse}} ng-model="data.bedsforuse" /> -->
+                        <input id="{{data.id + '-bedsForUse'}}" class="text-gray btn increment-jumbo" min="1" type="number" value={{data.bedsforuse}} ng-model="data.bedsforuse">
+                        </div>
+            </div>
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="bathsforuse">
+                        Bathrooms for use
+                        </label>
+                        <div class="col-sm-8">
+                        <!-- <input id="bathsforuse" name="bathsforuse" size="30" type="text" value={{data.bathsforuse}} ng-model="data.bathsforuse" /> -->
+                        <input id="{{data.id + '-bathrooms'}}" class="text-gray btn increment-jumbo" min="1" type="number" value={{data.bathsforuse}} ng-model="data.bathsforuse">
+                        </div>
+            </div>
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="biddingavailable">
+                        Bidding available?
+                        </label>
+                        <div class="col-sm-8">
+                              <!-- <input id="biddingavailable" name="biddingavailable" size="30" type="text" value={{data.biddingavailable}} ng-model="data.biddingavailable" /> -->
+                              <!-- <input type="radio" ng-model="data.biddingavailable" ng-value="data.biddingavailable">Yes<br>
+                              <input type="radio" ng-model="data.biddingavailable" ng-value="data.biddingavailable">No -->
+                              <div class="block-radio-button">
+                                    <label class="btn btn-block block-radio-button__panel" for="{{data.id + '-bidding-available'}}">
+                                          <div class="row no-margin-h">
+                                                <div class="pull-left text-lead block-radio-button__label">
+                                                      <span>Yes</span>
+                                                </div>
+                                                <div class="pull-right">
+                                                      <input id="{{data.id + '-bidding-available'}}" type="radio" name="residenceType" value={{data.biddingavailable}} checked={{data.biddingavailable}} class="pointer-input" ng-model="data.biddingavailable" ng-value="true">
+                                                </div>
+                                          </div>
+                                    </label>
+                              </div>
+                              <div class="block-radio-button">
+                                    <label class="btn btn-block block-radio-button__panel" for="{{data.id + '-bidding-unavailable'}}">
+                                          <div class="row no-margin-h">
+                                                <div class="pull-left text-lead block-radio-button__label">
+                                                      <span>No</span>
+                                                </div>
+                                                <div class="pull-right">
+                                                      <input id="{{data.id + '-bidding-unavailable'}}" type="radio" name="residenceType" value={{data.biddingavailable}} checked={{data.biddingavailable}} class="pointer-input" ng-model="data.biddingavailable" ng-value="false">
+                                                </div>
+                                          </div>
+                                    </label>
+                              </div>
+                        </div>
+            </div>
+
+      </div>
+      <div class = "col-md-6">
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="price">
+                        Price
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-price'}}" name="price" size="30" type="text" value={{data.price}} ng-model="data.price" />
+                        </div>
+            </div>
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="currency">
+                        Currency
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-currency'}}" name="currency" size="30" type="text" value={{data.currency}} ng-model="data.currency" />
+                        </div>
+            </div>
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="street">
+                        Address Street
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-street'}}" name="street" size="30" type="text" value={{data.street}} ng-model="data.street" />
+                        </div>
+            </div>
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="apt">
+                        Apt #
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-apt'}}" name="apt" size="30" type="text" value={{data.apt}} ng-model="data.apt" />
+                        </div>
+            </div>
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="city">
+                        City
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-city'}}" name="city" size="30" type="text" value={{data.city}} ng-model="data.city" />
+                        </div>
+            </div>
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="state">
+                        State
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-state'}}" name="noofguests" size="30" type="text" value={{data.state}} ng-model="data.state" />
+                        </div>
+            </div>
+            
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="zip">
+                        Zip
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-zip'}}" name="zip" size="30" type="text" value={{data.zip}} ng-model="data.zip" />
+                        </div>
+            </div>
+
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="country">
+                        Country
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-country'}}" name="country" size="30" type="text" value={{data.country}} ng-model="data.country" />
+                        </div>
+            </div>
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="from">
+                        From
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-from'}}" name="from" size="30" type="text" value={{data.from}} ng-model="data.from" disabled />
+                        </div>
+            </div>
+
+
+
+            <div class="row row-condensed space-3">
+                        <label class="text-right col-sm-3" for="till">
+                        Till
+                        </label>
+                        <div class="col-sm-8">
+                        <input id="{{data.id + '-till'}}" name="from" size="30" type="text" value={{data.till}} ng-model="data.till" disabled />
+                        </div>
+            </div>
+      </div>
+      <div class="col-md-4"></div>
+      <button type="submit" class="btn btn-primary btn-large col-md-4" ng-click="update_Listing(data.id)" id="updateListing">Update Listing</button>
+      <div class="col-md-4"></div>
+      <div class="col-md-12">
+            <div class="col-md-4"></div>
+            <div class="alert alert-success col-md-4" ng-hide="updatedListing">
+                  <strong>Listing updated successfully.</strong>
+            </div>
+            <div class="col-md-4"></div>
+      </div>
+      <div class="col-md-12">
+            <div class="col-md-4"></div>
+            <div class="alert alert-danger col-md-4" ng-hide="updatedListingFailed">
+                  <strong>Updating listing failed.</strong>
+            </div>
+            <div class="col-md-4"></div>
+      </div>
+      <script src="/scripts/util.client.logging.js"></script>
+</div>

@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="panel">
+    <div class="panel-body panel-light">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 co-xs-12 gal-item">
+        <a ng-click= transitionToProperty(property._id) id="property-display">
+
+            <div id="tripsProperty" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" id="carousel-properties" role="listbox">
+                <div class="item active">
+                  <img src="{{editTrip.propertyDetails.images[0]}}" alt="First slide">
+                </div>
+                <div class="item">
+                  <img src="{{editTrip.propertyDetails.images[0]}}" alt="Second slide">
+                </div>
+                <div class="item">
+                  <img src="{{editTrip.propertyDetails.images[0]}}" alt="Third slide">
+                </div>
+              </div>
+              <a class="left carousel-control" data-target="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" data-target="#tripsProperty" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <br/>
+            <span style="margin-left:4%"></span><br/>
+            <span style="font-size:12px; font-color:#888888; margin-left:4%">Entire home/apt · 9 guests 48 reviews</span>
+          </a>
+        </div>
+
+        <div class="col-md-6 col-dm-6 col-xs-12">
+          <!-- trip title -->
+          <div class="space-5">
+            <h3 class="landing__title-title">
+                <span class="font-airbnb">Edit trip </span>
+            </h3>
+            <h3 class="landing__title-title">
+            	<span class="font-airbnb">{{editTrip.propertyDetails.title}}</span>
+            </h3>
+            <span class="font-airbnb-faded"><b>Price paid: </b>{{editTrip.propertyDetails.price}}</span>
+            <br/>
+            <br/>
+            <span class="font-airbnb-faded">
+              <b>Start date: </b>
+              <md-datepicker id="fromdate-EditTrip" ng-model="fromdateEditTrip" md-placeholder="Start date" ng-disabled= !checkAvailabilityStatusForEditTrip></md-datepicker>
+            </span>
+            <span class="font-airbnb-faded">
+              <b>End date: </b>
+              <md-datepicker id="tilldateEditTrip" ng-model="tilldateEditTrip" md-placeholder="End date" ng-disabled= !checkAvailabilityStatusForEditTrip></md-datepicker>
+            </span>
+            <br/>
+            <br/>
+            <span class="font-airbnb-faded">
+              <button class="btn btn-primary" id="checkAvailabilityStatus" ng-show= checkAvailabilityStatusForEditTrip ng-click="checkPropertyAvailability(editTrip.prop_id, fromdateEditTrip, tilldateEditTrip)">
+                Check Availability
+              </button>
+              <button class="btn btn-primary" id="updateTrip" ng-show= updateEditTrip ng-click="updateTrip(editTrip.prop_id, editTrip.user_id, fromdateEditTrip, tilldateEditTrip)">
+                Update trip
+              </button>
+              <button class="btn btn-primary" id="deleteTrip" ng-click="deleteTrip(editTrip.prop_id, editTrip.user_id)">
+                Delete trip
+              </button>
+              <br/>
+              <span ng-if= errorInCheckTrip><b> Sorry, the rooms not available for the dates. </b></span>
+              <br/>
+              <span ng-if= errorInUpdatingTrip> Sorry, there was an error in updating trip. Please try again. </span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/scripts/util.client.logging.js"></script>
+</div>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb</title>
+
+    <!-- bootstrap stylesheet -->
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<!-- bootstrap theme css -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  	<!-- bootstrap jquery minified -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<!-- bootstrap javascript -->
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<!-- angular.js minified -->
+  	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  	<!-- jquery ui -->
+	  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	  <!-- angular-js-library -->
+  	<script src="/libraries/angular-ui-router.js"></script>
+    <!-- angular-js-library for Charts-->
+    <script src="/libraries/Chart.js"></script>
+    <!-- angular-js-library for maps-->
+    <!--<script src="/libraries/angular-google-maps.js"></script>
+    <script src="/libraries/underscore-min.js"></script> -->
+    <script src='//maps.googleapis.com/maps/api/js?key=AIzaSyDLOdiZRCkHi93wGx-6aaNMRqe8CAuM4ik'></script>
+
+     <!--  	fonts-->
+  	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <!--D3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="/libraries/angular-slider.js"></script>
+    <script src="/libraries/moment.min.js"></script>
+
+    <!--Angular material \m/-->
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css">
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.1/docs.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
+    <!--Angular material \m/-->
+
+
+    <!-- city search -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAkqQ3wuJz7XzOn0pdY5emxJns9cQbDcY0&libraries=places"></script>
+    <script src="/scripts/module.citySearch.js"></script>
+    <!-- city search -->
+
+
+    <script src="/scripts/angular.initial.js"></script>
+  	<script src="/scripts/controller.home.js"></script>
+    <script src="/scripts/controller.becomeHost.js"></script>
+    <script src="/scripts/controller.profile.js"></script>
+    <script src="/scripts/controller.profile.approvals.js"></script>
+    <script src="/scripts/controller.profile.yourtrips.js"></script>
+    <script src="/scripts/controller.trips.editTrip.js"></script>
+    <script src="/scripts/controller.profile.bids.js"></script>
+    <script src="/scripts/controller.admin.js"></script>
+    <script src="/scripts/controller.adminBilling.js"></script>
+    <script src="/scripts/controller.admin.approvals.js"></script>
+    <script src="/scripts/controller.becomehost.step1.js"></script>
+    <script src="/scripts/controller.becomehost.beds.js"></script>
+    <script src="/scripts/controller.becomehost.location.js"></script>
+    <script src="/scripts/controller.becomehost.step2.js"></script>
+    <script src="/scripts/controller.becomehost.desc.js"></script>
+    <script src="/scripts/controller.becomehost.step3.js"></script>
+    <script src="/scripts/controller.becomehost.dates.js"></script>
+    <script src="/scripts/controller.properties.js"></script>
+    <script src="/scripts/controller.property.js"></script>
+    <script src="/scripts/controller.checkout.js"></script>
+    <script src="/scripts/controller.hostanalytics.js"></script>
+    <script src="/scripts/controller.reviews.js"></script>
+    <script src="/scripts/util.client.logging.js"></script>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.homepage.css' />
+    <link rel='stylesheet' href='/stylesheets/style.becomeHost.css' />
+    <link rel='stylesheet' href='/stylesheets/style.common.airbnb.css' />
+    <link rel='stylesheet' href='/stylesheets/style.admin.css' />
+
+    <link rel='stylesheet' href='/libraries/angular-slider.css' />
+    <script src="/libraries/springy.js"></script>
+    <script src="/libraries/springyui.js"></script>
+
+
+
+     <script>
+     $(document).ready(function (){
+      var strLocation = window.location.href;
+      var strPrevLocation = window.location.href;
+      pagetime = 0;
+      var starttime = new Date();
+
+      var calculatepagetime = function(){
+          if (strLocation != window.location.href)
+          {
+            strPrevLocation = strLocation
+            strLocation = window.location.href;
+            var endtime = new Date();
+            pagetime = (endtime - starttime)/1000;
+            starttime = endtime;
+            endtime = "";
+            console.log("page changed");
+            $( window.location ).trigger(
+
+                "change",
+                {
+                    currentHref: strLocation,
+                    previousHref: strPrevLocation
+                });
+
+                $.post("/analytics/pagetime",
+                {
+                  pagefrom : strPrevLocation,
+                  pageto : strLocation,
+                  pagetimefrom : pagetime
+                });
+              }
+            }
+            setInterval( calculatepagetime, 100 );
+     })
+     </script>
+
+
+
+
+  </head>
+  <body ng-app="airbnbApp" class="mainBody">
+
+	<!-- Main Container -->
+	<div id="main" >
+
+	<div ui-view></div>
+	</div>
+
+  </body>
+</html>

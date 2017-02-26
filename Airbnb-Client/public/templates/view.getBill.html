@@ -1,0 +1,236 @@
+
+<style>
+    .invoice-box{
+        max-width:800px;
+        margin:auto;
+        padding:30px;
+        border:1px solid #eee;
+        box-shadow:0 0 10px rgba(0, 0, 0, .15);
+        font-size:16px;
+        line-height:24px;
+        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;
+        background-color: rgba(169, 169, 169, 0.09);
+    }
+
+    .invoice-box table{
+        width:100%;
+        line-height:inherit;
+        text-align:left;
+    }
+
+    .invoice-box table td{
+        padding:5px;
+        vertical-align:top;
+    }
+
+    .invoice-box table tr td:nth-child(2){
+        text-align:right;
+    }
+
+    .invoice-box table tr.top table td{
+        padding-bottom:20px;
+    }
+
+    .invoice-box table tr.top table td.title{
+        font-size:25px;
+        line-height:45px;
+        color:#333;
+    }
+
+    .invoice-box table tr.information table td{
+        padding-bottom:0px;
+    }
+
+    .invoice-box table tr.heading td{
+        background: #8d8d8d;
+        border-bottom:1px solid #ddd;
+        font-weight:bold;
+    }
+
+    .invoice-box table tr.details td{
+        padding-bottom:20px;
+    }
+
+    .invoice-box table tr.item td{
+        border-bottom:1px solid rgba(158, 158, 158, 0.37);
+        border-top:1px solid rgba(158, 158, 158, 0.37);
+        border-right: 1px solid rgba(158, 158, 158, 0.37);
+    }
+
+    .invoice-box table tr.item.last td{
+        border-bottom:none;
+
+    }
+
+    .invoice-box table tr.total td:nth-child(2){
+        border-top:2px solid #eee;
+        font-weight:bold;
+    }
+
+    .invoice-box p{
+        margin-top: 0px !important;
+        margin-bottom: 0.7px !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+
+        .invoice-box table tr.information table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+    }
+</style>
+
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <h1 style="margin-bottom: 0px !important;">CUSTOMER RECIEPT</h1>
+                            <p style="color: #8d8d8d; font-size:20px;">Confirmation Code: {{booking.id}}</p>
+                            <p style="color: #8d8d8d; font-size:15px;">Created: January 1, 2015</p>
+                        </td>
+                        <td style="color: #8d8d8d;">
+                            AIRBNB
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="heading">
+            <td>
+                Booking Details
+            </td>
+
+            <td>
+
+            </td>
+        </tr>
+        <tr class="information">
+            <td colspan="2">
+                <table>
+                    <tr class="item">
+                        <td>
+                            <i class="glyphicon glyphicon-user"></i>
+                            Name
+                            <h3>{{booking.userDetails.firstname}} &nbsp;{{booking.userDetails.lastname}}</h3>
+                        </td>
+
+                        <td>
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                            Travel destination
+                            <h3> {{booking.city}}</h3>
+
+
+                        </td>
+                    </tr>
+                    <tr class="item">
+                        <td >
+                            <i class="glyphicon glyphicon-transfer"></i>
+                            Accommodation Address
+                            <h3> {{booking.propertyDetails.street}}</h3>
+                        </td>
+
+                        <td>
+                            <i class="glyphicon glyphicon-home"></i>
+                            Property
+                            <h3> {{booking.propertyDetails.title}}</h3>
+                        </td>
+                    </tr>
+                    <tr class="item">
+                        <td>
+                            <i class="glyphicon glyphicon-home"></i>
+                            Accommodation Type
+                            <h3> {{booking.propertyDetails.guestaccess}}</h3>
+                        </td>
+
+                        <td>
+                            <i class="glyphicon glyphicon-user"></i>
+                            Guests
+                            <h3> {{booking.propertyDetails.noofguests}}</h3>
+
+                        </td>
+                    </tr>
+                    <tr class="item">
+                        <td>
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            Check In
+                            <h3>{{booking.from_date}}</h3>
+
+                        </td>
+
+                        <td>
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            Check Out
+                            <h3>{{booking.till_date}}</h3>
+
+                        </td>
+                    </tr>
+                    <tr class="item">
+                        <td>
+                            <i class="glyphicon glyphicon-picture"></i>
+                            Nights
+                            <h3>{{nights}}</h3>
+
+                        </td>
+
+                        <td>
+                            <i class="glyphicon glyphicon-credit-card"></i>
+                            Deposit
+                            <h3>$500</h3>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr class="heading">
+            <td>
+                Payment Details
+            </td>
+
+            <td>
+
+            </td>
+        </tr>
+        <tr class="item">
+            <td>
+                Accomodation charge
+            </td>
+
+            <td>
+               ${{booking.price}}
+            </td>
+        </tr>
+        <tr class="item">
+            <td>
+                Airbnb Service Fee
+            </td>
+
+            <td>
+                $300
+            </td>
+        </tr>
+        <tr class="item">
+            <td class="align-right">
+                TOTAL:
+            </td>
+
+            <td>
+                ${{total}}
+            </td>
+        </tr>
+        </br>
+    </table>
+    <br>
+    <p>Thanks for traveling with Airbnb</p>
+</div>

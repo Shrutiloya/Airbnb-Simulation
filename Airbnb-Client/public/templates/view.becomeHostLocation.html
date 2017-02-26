@@ -1,0 +1,146 @@
+<div class="left-backdrop"></div>
+<div class="right-backdrop hide-sm bg-white right-backdrop--with-bg"></div>
+<div class="list-your-space__content">
+	<div class="centered-content clearfix">
+		<div data-reactid=".1hacy163gg.1.4.0.0">
+			<div class="main-panel-container no-padding-h bg-white main-panel-outer-half clearfix" tabindex="-1">
+				<div class="main-panel main-panel-padding main-panel-progress pull-right main-panel-inner-half space-sm-8">
+					<div class="panel--no-border panel-title">
+						<h3 class="no-margin-padding">Where’s your place located?</h3>
+					</div>
+					<div class="text-danger">{{invAddress}}</div>
+					<div class="text-success">{{matchedAddMessage}}</div>
+					<div class="text-primary">{{guessedAddMessage}}</div>
+					<div>
+						<form>
+							<div>
+								<label for="address-form-field-country_code"> <span>Country</span>
+								</label>
+								<div class="select select-block select-jumbo whole-width">
+									<select class="" name="country_code" id="address-form-field-country_code" ng-model="country">
+										<option value="">Select country</option>
+										<option value="AR" data-prefix="54">Argentina</option>
+										<option value="AU" data-prefix="61">Australia</option>
+										<option value="AT" data-prefix="43">Austria</option>
+										<option value="CA" data-prefix="1">Canada</option>
+										<option value="CV" data-prefix="238">Cape Verde</option>
+										<option value="CL" data-prefix="56">Chile</option>
+										<option value="CN" data-prefix="86">China</option>
+										<option value="FR" data-prefix="33">France</option>
+										<option value="IN" data-prefix="91">India</option>
+										<option value="IT" data-prefix="39">Italy</option>
+										<option value="JP" data-prefix="81">Japan</option>
+										<option value="NZ" data-prefix="64">New Zealand</option>
+										<option value="CH" data-prefix="41">Switzerland</option>
+										<option value="AE" data-prefix="971">United Arab Emirates</option>
+										<option value="GB" data-prefix="44">United Kingdom</option>
+										<option selected="" value="US">United States</option>
+										<option value="ZW" data-prefix="263">Zimbabwe</option>
+									</select>
+								</div>
+							</div>
+							<div>
+								<div class="space-top-2 col-sm-12">
+									<label for="address-form-field-street">
+										<span>Street Address</span>
+									</label>
+									<input class="input input-block input-jumbo lys-address-form__input lys-invalid" id="address-form-field-street" name="street" type="text" autocomplete="off" placeholder="e.g. 123 Main St." ng-model="street">
+								</div>
+								<div class="space-top-2 col-sm-12">
+									<label for="address-form-field-apt">
+										<span>Apt, Suite, Bldg.(optional)</span>
+									</label>
+									<input class="input input-block input-jumbo lys-address-form__input" id="address-form-field-apt" name="apt" type="text" autocomplete="off" placeholder="e.g. Apt #7" ng-model="apt">
+								</div>
+								<div class="space-top-2 col-sm-12 col-md-6">
+									<label for="address-form-field-city">
+										<span>City</span>
+									</label>
+									<input class="input input-block input-jumbo lys-address-form__input lys-invalid" id="address-form-field-city" name="city" type="text" autocomplete="off" placeholder="e.g. San Francisco" ng-model="city">
+								</div>
+								<div class="space-top-2 col-sm-12 col-md-6">
+									<label for="address-form-field-state">
+										<span>State</span>
+									</label>
+									<input class="input input-block input-jumbo lys-address-form__input lys-invalid" id="address-form-field-state" name="state" type="text" autocomplete="off" placeholder="e.g. CA" ng-model="state">
+								</div>
+								<div class="space-top-2 col-sm-12 col-md-6">
+									<label for="address-form-field-zipcode">
+										<span>ZIP Code</span>
+									</label>
+									<input class="input input-block input-jumbo lys-address-form__input lys-invalid" id="address-form-field-zipcode" name="zipcode" type="text" autocomplete="off" placeholder="e.g. 94103" ng-model="zip">
+
+								</div>
+
+								<div class="space-top-10 col-sm-12 col-md-6">
+									<a class="btn btn-large btn-progress-next btn-large__next-btn pull-right-md btn-primary" ng-click="validateAddress()">
+										<div class="btn-progress-next__text">
+											<span>Validate</span>
+										</div></a>
+								</div>
+								<div class="alert alert-danger col-sm-12 " ng-hide="invPin">
+									<strong>Zip Code should be 5 digit number</strong>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+				<div class="main-panel__actions-wrapper">
+					<div class="centered-content clearfix">
+						<div class="bg-white main-panel-outer-half clearfix shadowed">
+							<div class="no-margin-padding__sm main-panel-padding main-panel-progress pull-right main-panel-inner-half space-sm-8">
+								<div class="divider hide-sm"></div>
+								<div class="row no-margin-padding__sm">
+									<div class="main-panel__actions col-sm-12 no-margin-padding__sm">
+										<div>
+											<a class="btn-progress-back link-icon va-container va-container-v pull-left text-gray link--accessibility-outline" ng-click="becomeHostBeds()">
+												<span class="icon hide-sm"></span>
+												<span class="va-middle">
+													<h5 class="text-normal">
+														<span>Back</span>
+													</h5>
+												</span>
+											</a>
+
+											<a class="btn btn-large btn-progress-next btn-large__next-btn pull-right-md btn-primary" ng-click="becomeHost()" id="step1-BecomeHostLocation">
+												<div class="btn-progress-next__text">
+													<span>Next</span>
+												</div></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="waypoint-container">
+					<span style="font-size: 0;"></span>
+				</div>
+			</div>
+			<div class="help-panel-container">
+				<div class="hide-sm help-panel panel">
+					<div class="panel-body">
+						<div class="help-panel__bulb-img space-2"></div>
+						<div class="help-panel__text">
+							<div>
+								<p>
+									<span>Your exact address will only be shared with confirmed guests.</span>
+								</p>
+								<div></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="show-sm help-panel__floating-container">
+					<span class="tooltip-popup__transition-container">
+						<div class="help-panel--collapsed help-panel__bulb-img-bubble">
+							<div class="help-panel__bulb-img img-center"></div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/scripts/util.client.logging.js"></script>
+</div>

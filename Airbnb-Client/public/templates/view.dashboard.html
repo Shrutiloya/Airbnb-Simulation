@@ -1,0 +1,352 @@
+<link rel='stylesheet' href='/stylesheets/style.homepage.css' />
+<link href="https://a2.muscache.com/airbnb/static/packages/common_o2.1-95d643eef69139392786405865038db8.css" media="all" rel="stylesheet" type="text/css" />
+<link href="https://a1.muscache.com/airbnb/static/packages/common-e2aa11d9210d88c08eb62a0e67b5f554.css" media="all" rel="stylesheet" type="text/css" />
+<link href="https://a1.muscache.com/airbnb/static/packages/address_widget-4f18ee66a37930ce1c93c8f33690c7b0.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="https://a2.muscache.com/airbnb/static/packages/phonenumbers-67b13441cd68e5c9161e38a0dab88b54.css" media="screen" rel="stylesheet" type="text/css" /><link href="https://a2.muscache.com/airbnb/static/business_travel/quick_enroll-9fe44fac8aa94516d93764b9b4e57633.css" media="screen" rel="stylesheet" type="text/css" /><link href="https://a1.muscache.com/airbnb/static/packages/edit_profile-ac1fc053a07a8229d28854f4afdc24e6.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
+ <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
+
+
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
+      <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+<!--
+
+    <iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{videolink}}" allowfullscreen frameborder="0">
+
+    <iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(movie.src)}}" allowfullscreen frameborder="0">
+
+-->
+<!--
+
+<div class="page-container-responsive">
+    
+<div class="alert alert-block alert-with-icon space-top-lg-4 space-top-md-4 hide-sm"
+    data-hook="referral-banner"
+    data-placement="dashboard">
+  <a href="#" class="alert-close" data-hook="referral-banner-close"></a>
+  <i class="icon currency-icon alert-icon icon-currency-usd"></i>
+  <div class="h5 space-1">
+    Earn $110 travel credit
+  </div>
+  <p>
+    Give your friends $35 off their first trip on Airbnb and you’ll get up to $110 travel credit.
+  </p>
+  <div>
+    <a href="/invite?r=35" class="btn btn-primary space-sm-2">Invite Friends</a>
+    <button type="button" class="btn space-sm-2" data-hook="referral-banner-later">
+      Later
+    </button>
+  </div>
+</div>
+
+  </div>
+-->
+<!--      <iframe width="100%" height="250" src="{{videolink}}" frameborder="0" allowfullscreen=""></iframe>-->
+
+
+<div class="row container">
+
+<div class="col-md-5 container">
+        <div class="page-container-responsive space-top-4 space-4">
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel space-4">
+        <div class="media media-photo-block
+            ">
+          <a href="{{profile_pic}}" title="View Profile"><img alt="Rohan" class="img-responsive" height="222" ng-src="{{profile_pic}}" title="Rohan" width="222" /></a>
+        </div>
+        <div class="panel-body">
+          <h2 class="text-center">
+            {{username}}
+          </h2>
+          <ul class="list-unstyled text-center">
+            <li>
+                <h2><a href="{{videolink}}">View video</a><b></b></h2>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+</div>
+    
+<div class="col-md-7 container header">
+    </br>    </br>
+    </br>
+    </br>
+
+    <h3>Upload video here</h3>
+    
+    
+    
+    
+    
+
+
+        <div class="panel space-4">
+  <div class="panel-header">
+    <input ng-model= "video" id= "video"type="filepicker-dragdrop" data-fp-apikey="AUcQuyjdkSSilf7xnkRLJz" data-fp-mimetypes="video/*" data-fp-container="modal" data-fp-store-location="dropbox" data-fp-services="DROPBOX,URL,VIDEO" ng-change="geturl(event.fpfile.url)">
+            </div>
+    </div>
+    </div>
+
+<!--
+      <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+
+<input ng-model= "video" id= "video"type="filepicker-dragdrop" data-fp-apikey="AlJPcP6PaTNWGF8LEcVmjz" data-fp-mimetypes="video/*" data-fp-container="modal" data-fp-store-location="dropbox" data-fp-services="DROPBOX,URL,VIDEO" ng-change="geturl(event.fpfile.url)">
+      <video class="video-js vjs-default-skin"
+  controls preload="auto" width="640" height="264"
+  poster="http://video-js.zencoder.com/oceans-clip.png" target="_blank"
+             data-setup='{"example_option":true}' source src="{{videolink}}" type="video/mp4"></video>
+      
+      
+      <iframe width="100%" height="250" src="{{videolink}}" frameborder="0" allowfullscreen=""></iframe>
+-->
+
+
+      
+      
+<!--
+      
+      <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+  poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+    
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="{{videolink}}" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>      
+      
+      {{videolink}}
+      
+-->
+      
+      
+<!--
+       <video class="video-js vjs-default-skin"
+  controls preload="auto" width="640" height="264"
+  poster="http://video-js.zencoder.com/oceans-clip.png"
+             data-setup='{"example_option":true}' src="{{videotag}}" type="video/mp4"></video>
+-->
+      
+<!--
+</div>
+            <video width="320" height="240"> 
+  <source src="{{videolink}}" type="video/mp4"></video>
+  <div class="panel space-4">
+    <div class="panel-header">
+      Connected accounts
+    </div>
+    <div class="panel-body">
+      <ul class="list-unstyled space-3">
+      <li class="row row-table space-2">
+        <div class="col-12 col-middle">
+          Facebook
+        </div>
+        <div class="col-3 col-middle">
+          <i class="icon icon-ok h3"></i>
+        </div>
+      </li>
+</ul>
+
+    </div>
+  </div>
+-->
+
+<!--
+
+      <div class="panel space-4">
+        <div class="panel-header">
+          Quick Links
+        </div>
+        <div class="panel-body">
+          <ul class="list-unstyled">
+              <li class="space-2">
+                <a href="/trips">Upcoming Trips</a>
+              </li>
+              <li class="space-2">
+                <a href="/help/getting-started/how-to-host">Hosting on Airbnb</a>
+              </li>
+              <li class="space-2">
+                <a href="/help/getting-started/how-to-travel">Traveling on Airbnb</a>
+              </li>
+              <li class="space-2">
+                <a href="/help">Help Center</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+-->
+
+<!--
+    </div>
+
+    <div class="col-md-9">
+
+
+        <div class="panel space-4">
+          <div class="panel-header">
+            Notifications
+          </div>
+          <div class="panel-body">
+            
+  <ul class="list-unstyled hdb-light-bg">
+      <li class="default airplane removable  alert0 "
+          data-alert-id="882512812">
+        <div class="row row-table ">
+            <div class="col-11 col-middle">
+                <a class="dashboard_alert_link" href="/invite?r=14">
+                  Invite a friend and you both get $35 to travel on Airbnb.
+                  <i class="icon icon-caret-right"></i>
+                </a>
+            </div>
+          <div class="col-1 col-middle">
+              <a href="/home/remove_dashboard_alert/882512812"
+                 class="pull-right icon-light-gray remove-alert"
+                 title="Remove Alert">
+                <i class="icon icon-remove"></i>
+              </a>
+          </div>
+        </div>
+          <hr class="section-divider">
+      </li>
+      <li class="default   alert1 "
+          data-alert-id="882512813">
+        <div class="row row-table ">
+            <div class="col-11 col-middle">
+                <span class="dashboard_alert_text">
+                  Please confirm your email address by clicking on the link we just emailed you. If you cannot find the email, you can <a href='/users/request_new_confirm_email'>request a new confirmation email</a> or <a href='/users/edit'>change your email address</a>.
+                </span>
+            </div>
+          <div class="col-1 col-middle">
+          </div>
+        </div>
+      </li>
+  </ul>
+
+          </div>
+        </div>
+-->
+
+
+<!--
+      <div class="panel space-4">
+        <div class="panel-header">
+          Messages (0 new)
+        </div>
+          <div class="panel-body">
+            <p>
+              When you message hosts or send reservation requests, you’ll see their responses here.
+            </p>
+          </div>
+      </div>
+
+
+    </div>
+  </div>
+  <script src="/scripts/util.client.logging.js"></script>
+</div>
+
+-->
+
+
+    </main>
+
+<!--      <div id="footer-promo-mount"></div>-->
+<!--
+      <div id="footer" class="container-brand-light footer-surround footer-container">
+        <footer class="page-container-responsive footer-container" role="contentinfo">
+
+    <div class="row row-condensed">
+      <div class="language-curr-picker col-md-2">
+        <div class="clearfix">
+          <div class="language-picker col-sm-6 col-md-12"></div>
+            <div class="currency-picker col-sm-6 col-md-12"></div>
+          <div class="cx-number"></div>
+-->
+<!--
+        </div>
+
+      </div>
+
+      <div class="col-md-2 col-md-offset-1 hide-sm">
+        <h2 class="h5">Airbnb</h2>
+        <ul class="list-layout">
+            <li><a href="/about/about-us" class="link-contrast">About</a></li>
+            <li><a href="/careers" class="link-contrast">Careers</a></li>
+            <li><a href="/press/news" class="link-contrast">Press</a></li>
+            <li><a href="/policies" class="link-contrast">Policies</a></li>
+            <li><a href="/help?from=footer" class="link-contrast">Help</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-md-offset-1 hide-sm">
+        <h2 class="h5">Discover</h2>
+        <ul class="list-layout">
+            <li><a href="/trust" class="link-contrast">Trust & Safety</a></li>
+            <li><a href="/invite?r=6" class="link-contrast">Refer A Friend</a></li>
+              <li><a href="/gift?s=footer" class="link-contrast">Gift Cards</a></li>
+            <li><a href="https://www.airbnbaction.com?utm_source=airbnb&amp;utm_medium=footer&amp;utm_campaign=product" class="link-contrast" target="_blank">Airbnb Action</a></li>
+            <li><a href="/business-travel?s=footer" class="link-contrast">Business Travel</a></li>
+            <li><a href="/things-to-do" class="link-contrast">Guidebooks</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-md-offset-1 hide-sm">
+        <h2 class="h5">Hosting</h2>
+        <ul class="list-layout">
+            <li><a href="/host" class="link-contrast">Why Host</a></li>
+            <li><a href="/hospitality" class="link-contrast">Hospitality</a></li>
+            <li><a href="/help/responsible-hosting" class="link-contrast">Responsible Hosting</a></li>
+        </ul>
+      </div>
+    </div>
+
+      <hr class="footer-divider space-top-8 space-4 hide-sm">
+      <hr class="footer-divider show-sm">
+
+    <div class="footer-table">
+      <ul class="list-layout list-inline icon-list" itemscope itemtype="http://schema.org/Organization">
+        <i class='icon icon-airbnb-alt icon-gray belo-icon icon-size-2'></i>
+          <div class="text-muted">
+            &copy; Airbnb, Inc.
+          </div>
+      </ul>
+      <ul class="list-layout list-inline icon-list right-list" itemscope itemtype="http://schema.org/Organization">
+
+        <link itemprop="url" href="https://www.airbnb.com">
+        <meta itemprop="logo" content="https://a2.muscache.com/airbnb/static/logos/belo-200x200-4d851c5b28f61931bf1df28dd15e60ef.png">
+
+        <li><a href="/terms" class="link-contrast">Terms & Privacy</a></li>
+        <div class="hide-sm">
+          <li><a href="/sitemaps" class="link-contrast">Site Map</a></li>
+            <li>
+              <a href="https://www.facebook.com/airbnb" class="link-contrast footer-icon-container" itemprop="sameAs" target="_blank">
+                <span class="screen-reader-only">Facebook</span>
+                <i class='icon footer-icon icon-facebook'></i>
+</a>            </li>
+
+            <li>
+              <a href="https://twitter.com/airbnb" class="link-contrast footer-icon-container" itemprop="sameAs" target="_blank">
+                <span class="screen-reader-only">Twitter</span>
+                <i class='icon footer-icon icon-twitter'></i>
+</a>            </li>
+            <li>
+              <a href="https://instagram.com/airbnb" class="link-contrast footer-icon-container" itemprop="sameAs" target="_blank">
+                <span class="screen-reader-only">Instagram</span>
+                <i class='icon footer-icon icon-instagram'></i>
+</a>            </li>
+        </div>
+      </ul>
+    </div>
+</footer>
+-->
+
+      </div>

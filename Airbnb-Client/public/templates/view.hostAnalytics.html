@@ -1,0 +1,115 @@
+<script>
+
+var userjourney = {};
+$.get("/analytics/getuserid",function(data,status){
+	var result = data.result;
+	var useridList = $("#useridList");
+	console.log(result);
+	$.each(result, function() {
+    	useridList.append($("<option />").val(this).text(this));
+	});
+})
+
+$('#useridList').change(function() {
+	var userid = $(this).val();
+	console.log(userid);
+    $.post("/analytics/userjourney", {userid: userid}, function(data){
+        if(data.statuscode == 0)
+        {
+        	console.log(data.result);
+        	//userjourney = data.result[0];
+        	
+        	drawGraph(data.result);
+        }
+
+    });
+});
+    
+function drawGraph(userjourney){
+	var graph = new Springy.Graph();
+  graph.loadJSON(userjourney);
+  var springy = jQuery('#springydemo').springy({
+    graph: graph
+  });
+}
+
+</script>
+<div>
+	<div>
+		<div class="col-md-10 col-md-offset-1 panel panel-default">
+			<div class="col-md-3">
+				<div ng-repeat="prop in props">
+					{{prop}}
+				</div>
+			</div>
+			<div class="col-md-1">
+				<div ng-repeat="count in propClicks track by $index">
+					{{count}}
+				</div>
+			</div>
+			<div class="col-md-8">
+				<canvas id="admin-bar-chart" style="max-height:50%;"></canvas>			
+			</div>		
+		</div>
+		
+
+
+
+        
+         <div class="col-md-10 col-md-offset-1 panel panel-default">
+			<div class="col-md-3">
+				<div ng-repeat="property in props1 track by $index">
+					{{property}}
+				</div>
+			</div>
+			<div class="col-md-1">
+				<div ng-repeat="countReview in countReviews track by $index">
+					{{countReview}}
+				</div>
+			</div>
+			<div class="col-md-8">
+				<canvas id="admin-bar-chart-review" style="max-height:50%;"></canvas>			
+			</div>		
+		</div>
+
+
+		<div class="col-md-10 col-md-offset-1 panel panel-default" id="bidgraph">
+			
+			<select name="hostProperty" ng-model="selectHostPropertyTitle" ng-change="getBidsForGraphs()" style="width : 100%">
+         		<option ng-repeat="hostProp in hostProperties" value="{{hostProp.title}}">{{hostProp.title}}</option>
+     		</select>  
+			 <div class="col-md-3">
+				<div ng-repeat="time in bidtimes track by $index">
+					{{time}}
+				</div>
+			</div>
+			<div class="col-md-1">
+				<div ng-repeat="bidamount in bidamounts track by $index">
+					{{bidamount}}
+				</div>
+			</div>
+			<div class="col-md-8">
+				<canvas id="host-bid-graph" style="max-height:50%;"></canvas>			
+			</div> 		
+		</div>
+
+
+        
+        <div id="userjourney">
+			<div id="useridOptions">
+				<select id="useridList" class="col-md-5" style="margin-left : 10%"></select>
+			</div>
+			<canvas id="springydemo" width="1500" height="1000" />
+		</div>
+      
+        
+        
+        
+        
+        
+        
+        
+
+
+	</div>
+</div>
